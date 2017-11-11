@@ -1,6 +1,14 @@
-<app-child *ngFor="let letter of letters"
-           [fromParent]="letter.message"
-           [amount]="letter.amount"></app-child>
+<div class="parent">
+  <label>Parent via ngModel</label>
+  <input type="text" [(ngModel)]="messageToChild"/> <br/>
+  <label>Say something to the Child:</label>
+  <input type="text" [(ngModel)]="messageBuffer"/>
+  <button (click)="onClick()">Send to Child</button>
+  <div>Child says: {{ messageFromChild }}</div>
+
+  <app-child [fromParent]="messageToChild"
+             (firstoutput_test)="awesomeMethod($event)"></app-child>
+</div>
 
 
 
