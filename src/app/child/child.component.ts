@@ -10,12 +10,17 @@ export class ChildComponent implements OnInit {
   @Input() fromParent: string;
   @Input() amount: number;
   @Input() another: string;
-  @Output() myOutputValue = new EventEmitter();
+  @Output() childEmitter = new EventEmitter<string>();
+  messageToParent: string = '';
+
   constructor() { }
 
   ngOnInit() {
-    this.myOutputValue.emit({name: 'Yunki', age: 61});
+
   }
 
+  onClick() {
+    this.childEmitter.emit(this.messageToParent);
+  }
 
 }

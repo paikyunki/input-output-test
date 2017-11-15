@@ -7,7 +7,7 @@
   <div>Child says: {{ messageFromChild }}</div>
 
   <app-child [fromParent]="messageToChild"
-             (firstoutput_test)="awesomeMethod($event)"></app-child>
+             (childEmitter)="awesomeMethod($event)"></app-child>
 </div>
 
 

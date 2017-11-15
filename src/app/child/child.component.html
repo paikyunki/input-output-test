@@ -2,4 +2,5 @@
   child works! The parent sent this value: {{ fromParent }}
 </p>
 <label>Send this to Parent:</label>
-<input type="text" [value]="fromParenhht"/>
+<input type="text" [(ngModel)]="messageToParent"/>
+<button (click)="onClick()">Send to Parent</button>

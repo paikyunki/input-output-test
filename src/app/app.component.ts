@@ -18,13 +18,13 @@ export class AppComponent {
     {message: 'Hello world!', amount: 100.00 }
   ];
 
-  awesomeMethod($event) {
-    console.log(typeof ($event));
-    this.messageFromChild = 'Child says: ' +  $event.name + ' ' + ++$event.age;
+  awesomeMethod(msg: string) {
+    console.log(typeof (msg));
+    this.messageFromChild = msg;
   }
 
   onClick() {
-    this.messageFromChild = this.messageBuffer;
+    this.messageToChild = this.messageBuffer;
   }
 
 }
